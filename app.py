@@ -1,3 +1,8 @@
+#Kelly Wang and Jawadul Kadir
+#SoftDev1 pd7
+#HW7 -- Do I Know You?
+#2017-10-04
+
 from flask import Flask, render_template, request, session
 import os
 
