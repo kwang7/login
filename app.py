@@ -24,6 +24,8 @@ def hello():
  
     if request.args["username"] == "kelly":
         if request.args['password'] == 'wang':
+            session['username'] = request.args['username']
+            session['password'] = request.args['password']
             return render_template("hello.html", username = request.args['username'])
         else:
             return render_template("form.html", error = 'Wrong Password' )
@@ -35,6 +37,8 @@ def hello():
     return render_template('hello.html')
 @app.route("/goodbye")
 def goodbye():
+    session.pop('username')
+    session.pop('password')
     return render_template("form.html", error = 'bye')
 
 if __name__ == "__main__":
